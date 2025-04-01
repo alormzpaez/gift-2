@@ -8,96 +8,100 @@
 body {
   background-color: #eac285;
 }
-.container {
-  width: 400px;
-  height: 400px;
-  background-color: oklch(0.968 0.007 247.896);
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  border-radius: 8px;
-  box-shadow: 0 20px 45px rgba(120, 76, 10, 0.25);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
 }
-.cake {
-  width: 100%;
-  position: absolute;
-  bottom: 60px;
+body{
+    color: azure;
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    /* padding-top: -30; */
 }
-.bottom-layer,
-.top-layer,
-.middle-layer {
-  height: 80px;
-  width: 240px;
-  position: relative;
-  margin: auto;
-  background-repeat: repeat;
-  background-size: 100% 100%, 60px 100px;
-  background-position: 28px 0;
-  background-image: linear-gradient(
-      transparent 50px,
-      #e3a953 50px,
-      #e3a953 60px,
-      transparent 60px
-    ),
-    radial-gradient(circle at 30px 5px, #713e16 30px, #eac284 31px);
+
+.botones{
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
 }
-.middle-layer {
-  transform: scale(0.85);
-  top: 72px;
-  animation: rise-1 2s forwards;
+
+.botones a{
+    background-color: #0a2be9;
+    padding: 9px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+
 }
-@keyframes rise-1 {
-  100% {
-    top: 7px;
-  }
+
+.botones a:focus{
+    background-color: rgb(50, 194, 194);
 }
-.top-layer {
-  transform: scale(0.7);
-  top: 144px;
-  animation: rise-2 2s 2s forwards;
+
+.greetings{
+    font-size: 7rem;
+    font-weight: 900;
 }
-@keyframes rise-2 {
-  100% {
-    top: 26px;
-  }
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
 }
-.candle {
-  background: repeating-linear-gradient(
-    45deg,
-    #fd3018 0,
-    #fd3018 5px,
-    #ffa89e 5px,
-    #ffa89e 10px
-  );
-  height: 45px;
-  width: 15px;
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  animation: rise-3 1s 4s forwards;
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90%{
+        color: #111;
+        text-shadow: none;
+    }
 }
-@keyframes rise-3 {
-  100% {
-    bottom: 202px;
-  }
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
 }
-.candle:after {
-  content: "";
-  position: absolute;
-  height: 16px;
-  width: 16px;
-  background-color: #ffee54;
-  border-radius: 0 50% 50% 50%;
-  transform: scale(0) rotate(45deg);
-  bottom: 50px;
-  left: -0.5px;
-  animation: flame 1.5s 5s forwards;
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
 }
-@keyframes flame {
-  100% {
-    transform: scale(1) rotate(45deg);
-  }
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6){
+    animation-delay: 1s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    .description{
+        font-size: 2rem;
+    }
+    
+    .button a{
+        font-size: 1rem;
+    }
 }
